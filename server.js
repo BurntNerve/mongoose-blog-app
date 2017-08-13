@@ -13,6 +13,9 @@ const handleBlogPosts = require('./routers/posts.js');
 app.use(logger('dev'));
 app.use(bodyParser.json());
 
+app.use('/', () => {
+  res.send('Root Directory!');
+});
 app.use('/posts', handleBlogPosts);
 
 let server;

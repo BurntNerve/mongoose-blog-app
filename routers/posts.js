@@ -6,6 +6,10 @@ const mongoose = require('mongoose');
 
 const { Blogpost } = require('../models');
 
+router.use('/', () => {
+  console.log('Blog-Posts!');
+});
+
 router.get('/', (req, res) => {
   Blogpost.find()
     .exec()
